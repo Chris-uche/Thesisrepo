@@ -8,7 +8,8 @@ from matplotlib.colors import ListedColormap
 cmap = ListedColormap(['#FF0000','#00FF00','#0000FF'])
 
 #df = pd.read_csv('spama.data.txt')
-df = pd.read_csv('iris.data.txt')
+df = pd.read_csv('leak.data.txt')
+df = df.replace(r'^\s*$', np.nan, regex=True)
 
 X= np.array(df.drop(['Class'], 1))
 y = np.array(df['Class'])

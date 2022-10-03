@@ -27,15 +27,16 @@ mpl.rc('ytick', labelsize=12)
 #X = iris["data"][:, (2, 3)]  # petal length, petal width
 #y = iris["target"]
 
-data = pd.read_csv('iris.data.txt')
+leakdata = pd.read_csv('leak.data.txt')
 #iris =data.head()
-X = data.drop(['Leak Size'], axis=1)
-#print(X.shape)
-y = data['Leak Size']
-#print(y.shape)
+X = leakdata.drop(['Leak Size'], axis=1)
+print(X.shape)
+y = leakdata['Leak Size']
+print(y.shape)
 
-X =np.array(X).reshape((-1, 1))
-y =np.array(y).reshape((-1, 1))
+
+#X =np.array(X).reshape((-1, 1))
+#y =np.array(y).reshape((-1, 1))
 #X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2)
 
 
@@ -82,4 +83,4 @@ plt.xlabel("Petal length", fontsize=14)
 plt.ylabel("Petal width", fontsize=14)
 #plt.legend(loc="upper left", fontsize=14)
 plt.axis([0, 5.5, 0, 2])
-plt.show()  
+#plt.show()  
